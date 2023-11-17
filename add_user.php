@@ -1,6 +1,7 @@
 <?php
-$dsn="mysql:host=localhost;charset=utf8;dbname=member";
-$pdo=new PDO($dsn,'root','');
+include_once "./include/connect.php";
+// $dsn="mysql:host=localhost;charset=utf8;dbname=member";
+// $pdo=new PDO($dsn,'root','');
 //  過濾特殊符號 https://www.php.net/manual/zh/function.trim.php
 $acc=htmlspecialchars(trim($_POST['acc']));
 
