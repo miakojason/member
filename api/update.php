@@ -1,5 +1,5 @@
 <?php
-include_once "./include/connect.php";
+include_once "../include/connect.php";
 
 $sql="update `users` set `acc`='{$_POST['acc']}',
                         `pw`='{$_POST['pw']}',
@@ -15,7 +15,7 @@ if($pdo->exec($sql)>0){
 
 // echo $sql;
 // header失敗echo檢查sql印出來有沒有錯誤
-header("location:member.php");
+header("location:../member.php");
 
 
 ?>

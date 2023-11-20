@@ -37,7 +37,7 @@
                 }
 
             ?>
-		      	<form action="login.php" class="signin-form" method="post">
+		      	<form action="./api/login.php" class="signin-form" method="post">
 		      		<div class="form-group">
 		      			<input id="acc" type="text" name="acc" class="form-control" placeholder="哥蒙~哥萌~弄" required>
 		      		</div>
