@@ -8,14 +8,16 @@ $pw=$_POST['pw'];
 // $pdo=new PDO($dsn,'root','');
 
 //$sql="select * from users where `acc`='$acc' && `pw`='$pw'";
-$sql="select count(*) from users where `acc`='$acc' && `pw`='$pw'";
+// $sql="select count(*) from users where `acc`='$acc' && `pw`='$pw'";
 
 //$user=$pdo->query($sql)->fetch();
-$user=$pdo->query($sql)->fetchColumn();
+// $user=$pdo->query($sql)->fetchColumn();
 //print_r($user);
 
 //if($user['acc']==$acc && $user['pw']==$pw){
-if($user){
+
+ $res=total('users',['acc'=>$acc,'pw'=>$pw]);
+if($res){
     $_SESSION['user']=$acc;
     header("location:../index.php");
 }else{
