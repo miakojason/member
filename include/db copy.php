@@ -2,6 +2,7 @@
 date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB{
+
     protected $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
     protected $pdo;
     protected $table;
@@ -11,6 +12,8 @@ class DB{
         $this->table=$table;
         $this->pdo=new PDO($this->dsn,'root','');
     }
+
+
     function all( $where = '', $other = '')
     {
         $sql = "select * from `$this->table` ";
@@ -130,6 +133,7 @@ class DB{
         return $tmp;
     }
 }
+
 function dd($array)
 {
     echo "<pre>";
@@ -138,4 +142,6 @@ function dd($array)
 }
 
 $User=new DB('users');
+
+
 ?>
