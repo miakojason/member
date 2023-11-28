@@ -1,6 +1,7 @@
 <?php
 // session_start();
-include_once "../include/connect.php";
+// include_once "../include/connect.php";
+include_once "../include/db.php";
 $acc=$_POST['acc'];
 $pw=$_POST['pw'];
 
@@ -16,7 +17,7 @@ $pw=$_POST['pw'];
 
 //if($user['acc']==$acc && $user['pw']==$pw){
 
- $res=total('users',['acc'=>$acc,'pw'=>$pw]);
+ $res=$User->count(['acc'=>$acc,'pw'=>$pw]);
 if($res){
     $_SESSION['user']=$acc;
     header("location:../index.php");

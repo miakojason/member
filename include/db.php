@@ -2,8 +2,7 @@
 date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB{
-
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=school";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=member";
     protected $pdo;
     protected $table;
 
@@ -12,8 +11,6 @@ class DB{
         $this->table=$table;
         $this->pdo=new PDO($this->dsn,'root','');
     }
-
-
     function all( $where = '', $other = '')
     {
         $sql = "select * from `$this->table` ";
@@ -133,17 +130,11 @@ class DB{
         return $tmp;
     }
 }
-
 function dd($array)
 {
     echo "<pre>";
     print_r($array);
     echo "</pre>";
 }
-
-
-$student=new DB('students');
-$rows=$student->count();
-dd($rows);
-
+$User=new DB('uers');
 ?>
